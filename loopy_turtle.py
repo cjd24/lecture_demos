@@ -19,7 +19,38 @@ my_turtle.penup()
 my_turtle.goto(20,20)
 my_turtle.pendown()
 
-my_turtle.forward(100)
+polygon_sizes = [(6, "green"), (8, "blue"), 3, 3, 3, 4]
+rainbow = ["red", "orange", "yellow", "green", "blue", "darkblue", "purple"]
+
+def draw_ngon(num_sides, color):
+    my_turtle.color(color)
+    for side_num in range(num_sides):
+        my_turtle.forward(50)
+        my_turtle.left(360/num_sides)
+
+# draw_ngon(4, "red")
+# draw_ngon(5, "orange")
+# draw_ngon(6, "yellow")
+
+
+count = 0
+for num_sides in polygon_sizes:
+
+    draw_ngon(num_sides, rainbow[count])
+
+    my_turtle.penup()
+    my_turtle.forward(100)
+    #my_turtle.goto((count * 100) + 50, 20)
+    my_turtle.pendown()
+
+    count = count + 1
+
+
+# num_sides = 4
+# for side_num in range(num_sides):
+#     my_turtle.forward(50)
+#     my_turtle.left(360/num_sides)
+
 
 
 
